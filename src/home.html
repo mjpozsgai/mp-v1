@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Matthew Pozsgai</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 600, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+
+    $(document).ready(function () {
+        var $nav = $('.sidenav').offset();
+        var $window = $(window);
+
+        $window.scroll(function () {
+            if ($window.scrollTop() >= $nav.top -85) {
+                $('.sidenav').removeClass().addClass('sidenav-fixed');
+                $('.current').removeClass();
+                $('#sec1').addClass('current');
+                $('.hide').removeClass();
+                $('#green').addClass('hide');
+            }
+            else{
+              $('.sidenav-fixed').removeClass().addClass('sidenav');
+              $('.current').removeClass();
+              $('#arrow').addClass('current');
+              $('.hide').removeClass();
+              $('#grey').addClass('hide');
+            }
+        });
+    });
+//     $(document).ready(function(){
+//     var $nav = $('.sidenav');//Caching element
+//     // hide .navbar first - you can also do this in css .nav{display:none;}
+//     $nav.hide();
+//
+//     // fade in .navbar
+//     $(function () {
+//         $(window).scroll(function () {
+//             // set distance user needs to scroll before we start fadeIn
+//             if ($(this).scrollTop() > 300) { //For dynamic effect use $nav.height() instead of '100'
+//                 $nav.fadeIn();
+//             } else {
+//                 $nav.fadeOut();
+//             }
+//         });
+//     });
+//
+// });
+//
+$(document).ready(function () {
+
+    var $window = $(window);
+
+    var overview = $('.overview').offset().top-60;
+    var experience = $('.experience').offset().top-60;
+    var projects = $('.projects').offset().top-60;
+    var about = $('.about').offset().top-60;
+    var contact = $('.contact').offset().top-60;
+
+
+    $window.scroll(function () {
+      if ($window.scrollTop() < experience){
+        ;
+      }
+      else if(($window.scrollTop() >= experience) && ($window.scrollTop() < projects)) {
+          $('.current').removeClass();
+          $('#sec2').addClass("current")
+      }
+      else if(($window.scrollTop() >= projects) && ($window.scrollTop() < about)) {
+          $('.current').removeClass();
+          $('#sec3').addClass("current")
+      }
+      else if(($window.scrollTop() >= about) && ($window.scrollTop() < contact)) {
+          $('.current').removeClass();
+          $('#sec4').addClass("current")
+      }
+      else {
+          $('.current').removeClass();
+          $('#sec5').addClass("current")
+      }
+
+    });
+});
+    </script>
+
+
+
+  </head>
+  <body>
+
+    <div class="hero">
+      <a href="resume.pdf"><div class="resume"> Resum&eacute;  </div></a>
+      <div class="line-right"> <a href="https://www.linkedin.com/in/matthewpozsgai/" ><img src="in.png" ></img> </a> </div>
+      <a href="mailto:mjpozsgai@gmail.com"><div class="contact-link"> Contact Me</div></a>
+
+      <div class="hero-container">
+        <span class="hello">Hey!  <span class="my"> My name is</span></span>
+        <strong>Matthew Pozsgai.</strong>
+      </div>
+    </div>
+  <div class="sidenav">
+    <ul class="nav-menu">
+       <a href="#overview"><li id="sec1" > Overview</li> </a>
+       <a href="#experience"><li id="sec2"> Experience</li> </a>
+       <a href="#projects"><li id="sec3"> Projects</li> </a>
+       <a href="#about"><li  id="sec4"> About Me</li> </a>
+       <a href="#contact"><li  id="sec5"> Contact</li> </a>
+  </ul>
+</div>
+
+<div class="main">
+    <a href="#overview">
+      <div id="arrow" class="current">
+        <img id='green' src="green_arrow.png">
+        <img id='grey' class = "hide" src="arrow.png">
+      </div>
+    </a>
+    <div class="overview" id="overview">
+
+      <div class="header">
+          <div class="underline"></div><h1>OVERVIEW</h1><div class="underline"></div>
+      </div>
+
+      <div class="content-overview">
+
+
+        <div class="wrapper">
+        <div class="content-text">
+
+
+        </div>
+        <div class="content-image">
+          <img src="me_final.jpg"></img>
+        </div>
+      </div>
+      </div>
+
+    </div>
+    <div class="experience" id="experience">
+      <div class="header">
+          <div class="underline"></div><h1>EXPERIENCE</h1>
+          <div class="underline"></div>
+        </div>
+      <div class="content-experience">
+
+          <div class="education">
+            <div class="sub-header">
+                <h2>Education</h2>
+              </div>
+              <div class="sub-content">
+                <div class="uchicago">
+                  <div class="row">
+                  <div class="school-name">The University of Chicago</div>
+                  <div class="dates">June 2018 - December 2020</div>
+                  </div>
+                  <div class="degree">Master of Science - Computer Science</div>
+
+                </div>
+                <div class="indiana">
+                  <div class="row">
+
+                  <div class="school-name">Indiana University - Bloomington</div>
+                  <div class="dates">August 2013 - May 2017</div>
+                </div>
+                  <div class="degree">Bachelor of Science - Neuroscience</div>
+                </div>
+
+
+              </div>
+          </div>
+          <div class="work">
+            <div class="sub-header">
+                <h2>Work Experience</h2>
+              </div>
+              <div class="sub-content">
+                <div class="job">
+                  <div class="row">
+                  <div class="job-name">Amazon</div>
+                  <div class="dates">June 2020 - September 2020</div>
+                  </div>
+                  <div class="role">Software Development Engineer Intern</div>
+                  <div class="details">
+
+                   </div>
+                </div>
+                <div class="job-2">
+                  <div class="row">
+                  <div class="job-name">The University of Chicago</div>
+                  <div class="dates">April 2018 - December 2019</div>
+                  </div>
+                  <div class="role">Research Technologist</div>
+                  <div class="details">
+                   </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="skills">
+            <div class="sub-header">
+                <h2>Skills</h2>
+              </div>
+              <div class="sub-content">
+                <div class="skills-container">
+                  <ul class="skill-list">
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>HTML &amp; CSS</li>
+                    <li>JavaScript</li>
+                    <li>Flask</li>
+                    <li>React</li>
+                    <li>AWS</li>
+                    <li>SQL</li>
+                    <li>C++</li>
+                    <li>Docker</li>
+                    <li>Django</li>
+                    <li>Object-Oriented Programming</li>
+                    <li>RabbitMQ</li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+
+      </div>
+    </div>
+
+      <div class="projects" id="projects">
+        <div class="header">
+          <div class="underline"></div>
+            <h1>Projects</h1>
+            <div class="underline"></div>
+        </div>
+        <div class="content-projects">
+          <div class="projects-container">
+            <div class="projects-row">
+
+              <div class="project-square">
+                <div class="project-title">Runners-4-Readers</div>
+                <div class="project-description">
+                    A responsive website for the non-profit Runners-4-Readers that allows users to learn
+                    about the organization, make donations, and volunteer.
+                 </div>
+                <div class="technologies">
+                  <div>React</div>|
+                  <div>JS</div>|
+                  <div>HTML</div>|
+                  <div>CSS</div>
+                </div>
+              </div>
+
+              <div class="project-square">
+                <div class="project-title">Personal Website</div>
+                <div class="project-description">
+                    First iteration of my personal website.
+                 </div>
+                <div class="technologies">
+                  <div>HTML</div>
+                  |
+                  <div>CSS</div>
+                  |
+                  <div>JS</div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <div class="projects-row">
+
+              <div class="project-square">
+                <div class="project-title">Distributed Message Queue</div>
+                <div class="project-description">
+                    A distributed message queue accessed through a REST API
+                    using the Raft consensus algorithm to achieve fault tolerance.
+                 </div>
+                <div class="technologies">
+                  <div>Python</div>|
+                  <div>Flask</div>
+                </div>
+              </div>
+              <div class="project-square">
+                <div class="project-title">Distributed Genome Annotation App </div>
+                <div class="project-description">
+                    A distributed application hosted on AWS using Python Boto3 SDK.
+                    Annotates a user-uploaded file and stores both the original and final
+                    files using S3 storage, tracks job status, and sends users updates.
+
+                 </div>
+                <div class="technologies">
+                  <div>Python</div>|
+                  <div>AWS</div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="projects-row">
+              <div class="project-square">
+                <div class="project-title">A+Ocean</div>
+                <div class="project-description">
+                    An auction site modeled on eBay, designed with a microservice architecture.
+
+                 </div>
+                <div class="technologies">
+                  <div>Python</div>|
+                  <div>Django</div>|
+                  <div>Docker</div>|
+                  <div>RabbitMQ</div>
+                </div>
+              </div>
+              <div class="project-square">
+                <div class="project-title">Research Study Database</div>
+                <div class="project-description">
+                  Modeled and implemented a simple database to track research studies and patient enrollment.
+                 </div>
+                <div class="technologies">
+                  <div>MySQL</div>|
+                  <div>PHP</div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="about" id="about">
+        <div class="header">
+          <div class="underline-about"></div>
+            <h1>About Me</h1>
+            <div class="underline-about"></div>
+        </div>
+        <div class="content-about">
+          I'm a graduate student in the Masters Program in Computer Science at The University of Chicago.
+          <br><br>
+          I graduated from Indiana University Bloomington with a BS in neuroscience. Shortly after graduation, I began working
+          full time in Dr. Lucy Godley's lab at The University of Chicago where I divided my time between managerial responsibilities and
+          bionformatic research. Around the same time I began evening classes for my Masters program.
+          <br><br>
+          After graduation I hope to obtain a full-stack software engineering position. If you have any questions or just want to say hi,
+          my inbox is always open!
+        </div>
+
+      </div>
+
+      <div class="contact" id="contact">
+        <div class="header">
+          <div class="underline"></div>
+            <h1>Contact</h1>
+            <div class="underline"></div>
+        </div>
+        <div class="content-contact">
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  </body>
+</html>
