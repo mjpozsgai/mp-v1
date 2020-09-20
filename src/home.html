@@ -2,8 +2,10 @@
 <html>
   <head>
     <title>Matthew Pozsgai</title>
+    <meta name="google-site-verification" content="1Ur4I4phFjhPVuCwYz8a_DsByZfZjx5TtLpN9WEJG0s" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="style-3.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
 
@@ -78,37 +80,99 @@
 //
 // });
 //
+function collapse() {
+    var menu = document.getElementsByClassName('nav-menu')[0];
+    var nav = document.getElementsByClassName('sidenav')[0];
+    if (nav == undefined){
+      var nav = document.getElementsByClassName('sidenav-fixed')[0];
+
+    }
+
+    if (menu.id=="nav-menu-closed"){
+      menu.id = "nav-menu-open";
+      nav.id = "sidenav-open"
+      var arrow = document.getElementById('down-arrow');
+      arrow.id = "up-arrow";
+    }
+    else{
+      menu.id = "nav-menu-closed";
+      nav.id = "sidenav-closed"
+
+      var arrow = document.getElementById('up-arrow');
+      arrow.id = "down-arrow";
+    }
+}
+
+function wait(){
+  window.setTimeout(collapse, 1500);
+
+}
+
+
 $(document).ready(function () {
 
     var $window = $(window);
 
-    var overview = $('.overview').offset().top-60;
-    var experience = $('.experience').offset().top-60;
-    var projects = $('.projects').offset().top-60;
-    var about = $('.about').offset().top-60;
-    var contact = $('.contact').offset().top-60;
+    var overview = $('.overview').offset().top-20;
+    var experience = $('.experience').offset().top-20;
+    var projects = $('.projects').offset().top-20;
+    var about = $('.about').offset().top-20;
+    var contact = $('.contact').offset().top-20;
 
 
     $window.scroll(function () {
-      if ($window.scrollTop() < experience){
-        ;
+
+      if($(".menu-button").css("display") =="flex"){
+        if ($window.scrollTop() < experience){
+               $('.current').removeClass();
+                $('#sec1').addClass("current");
+        }
+        else if(($window.scrollTop() >= experience) && ($window.scrollTop() < projects)) {
+            $('.current').removeClass();
+            $('#sec2').addClass("current");
+            console.log($window.scrollTop() );
+            console.log(projects);
+        }
+        else if(($window.scrollTop() >= projects) && ($window.scrollTop() < about)) {
+            $('.current').removeClass();
+            $('#sec3').addClass("current")
+        }
+        else if(($window.scrollTop() >= about) && ($window.scrollTop() < contact-225)) {
+
+            $('.current').removeClass();
+            $('#sec4').addClass("current")
+        }
+        else {
+            $('.current').removeClass();
+            $('#sec5').addClass("current")
+        }
+
+
       }
-      else if(($window.scrollTop() >= experience) && ($window.scrollTop() < projects)) {
-          $('.current').removeClass();
-          $('#sec2').addClass("current")
+
+      else{
+        if ($window.scrollTop() < experience){
+          ;
+        }
+        else if(($window.scrollTop() >= experience) && ($window.scrollTop() < projects)) {
+            $('.current').removeClass();
+            $('#sec2').addClass("current")
+        }
+        else if(($window.scrollTop() >= projects) && ($window.scrollTop() < about)) {
+            $('.current').removeClass();
+            $('#sec3').addClass("current")
+        }
+        else if(($window.scrollTop() >= about) && ($window.scrollTop() < contact-15)) {
+            $('.current').removeClass();
+            $('#sec4').addClass("current")
+        }
+        else {
+            $('.current').removeClass();
+            $('#sec5').addClass("current")
+        }
+
       }
-      else if(($window.scrollTop() >= projects) && ($window.scrollTop() < about)) {
-          $('.current').removeClass();
-          $('#sec3').addClass("current")
-      }
-      else if(($window.scrollTop() >= about) && ($window.scrollTop() < contact-15)) {
-          $('.current').removeClass();
-          $('#sec4').addClass("current")
-      }
-      else {
-          $('.current').removeClass();
-          $('#sec5').addClass("current")
-      }
+
 
     });
 });
@@ -120,23 +184,26 @@ $(document).ready(function () {
   <body>
 
     <div class="hero">
-      <a href="resume.pdf"><div class="resume"> Resum&eacute;  </div></a>
-      <div id="line-right"> <a href="https://www.linkedin.com/in/matthewpozsgai/" ><img id="in" class="hide" src="in.png" ></img> </a> </div>
-      <a href="mailto:mjpozsgai@gmail.com"><div class="contact-link"> Contact Me</div></a>
-
       <div class="hero-container">
         <span class="hello">Hey, my name is</span>
         <strong>Matthew Pozsgai.</strong>
         <div class="sub-title">I'm a software engineer and grad student based in Chicago, IL.</div>
       </div>
     </div>
-  <div class="sidenav">
-    <ul class="nav-menu">
-       <a href="#overview"><li id="sec1" > Summary</li> </a>
-       <a href="#experience"><li id="sec2"> Experience</li> </a>
-       <a href="#projects"><li id="sec3"> Projects</li> </a>
-       <a href="#about"><li  id="sec4"> About Me</li> </a>
-       <a href="#contact"><li  id="sec5"> Contact</li> </a>
+  <div class="sidenav" id="sidenav-closed">
+    <a href="resume.pdf"><div class="resume"> Resum&eacute;  </div></a>
+    <div id="line-right"> <a href="https://www.linkedin.com/in/matthewpozsgai/" ><img id="in" class="hide" src="in.png" ></img> </a> </div>
+    <a href="mailto:mjpozsgai@gmail.com"><div class="contact-link"> Contact Me</div></a>
+    <div class="menu-button"  id="menu-collapse" >
+      <div onclick="collapse()" class="arrow-menu" id="down-arrow">
+      </div>
+    </div>
+    <ul class="nav-menu" id="nav-menu-closed">
+       <a onclick ="wait()" href="#overview"><li id="sec1" > Summary</li> </a>
+       <a onclick ="wait()" href="#experience"><li id="sec2"> Experience</li> </a>
+       <a onclick ="wait()" href="#projects"><li id="sec3"> Projects</li> </a>
+       <a onclick ="wait()" href="#about"><li  id="sec4"> About Me</li> </a>
+       <a onclick ="wait()" href="#contact"><li  id="sec5"> Contact</li> </a>
   </ul>
 </div>
 
@@ -242,6 +309,43 @@ $(document).ready(function () {
               </div>
           </div>
 
+
+          <div class="teaching">
+            <div class="sub-header">
+                <h2>Teaching Experience</h2>
+              </div>
+              <div class="sub-content">
+                <div class="job">
+                  <div class="row">
+                  <div class="job-name">Cold Spring Harbor Laboratory</div>
+                  <div class="dates">July 2016, July 2017</div>
+                  </div>
+                  <div class="role">Teaching Assistant</div>
+                  <div class="details">
+
+                   </div>
+                </div>
+                <div class="job-2">
+                  <div class="row">
+                  <div class="job-name">Indiana University </div>
+                  <div class="dates">April 2018 - December 2019</div>
+                  </div>
+                  <div class="role">Research Technologist</div>
+                  <div class="details">
+                   </div>
+                </div>
+                <div class="job-2">
+                  <div class="row">
+                  <div class="job-name">Indiana University - Bloomington</div>
+                  <div class="dates">Spring &amp Fall 2016, 2017</div>
+                  </div>
+                  <div class="role">Teaching Assistant</div>
+                  <div class="details">
+                   </div>
+                </div>
+              </div>
+          </div>
+
           <div class="skills">
             <div class="sub-header">
                 <h2>Skills</h2>
@@ -328,13 +432,13 @@ $(document).ready(function () {
               <div class="project-square">
                 <div class="project-title">Distributed Genome Annotation App </div>
                 <div class="project-description">
-                    A distributed application hosted on AWS using Python Boto3 SDK.
-                    Annotates a user-uploaded file and stores both the original and final
-                    files using S3 storage, tracks job status, and sends users updates.
+                    A distributed application hosted on AWS using Python Boto3 SDK, utilizing S3 storage, load-balanced EC2 instances,
+                    and SNS/SQS communication between services.
+
 
                  </div>
                 <div class="technologies">
-                  <div>Python</div>|
+                  <div>Python (Boto3 SDK)</div>|
                   <div>AWS</div>
                 </div>
               </div>

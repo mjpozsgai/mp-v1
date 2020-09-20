@@ -631,6 +631,12 @@
     font-weight: 400;
   }
 
+  /* -------EXPERIENCE-EXPERIENCE------TEACHING-TEACHING -------------TEACHING------------- TEACHING-------------*/
+.teaching{
+  display:flex;
+  margin: 0 0 10% 0;
+  flex-direction: column;
+}
 
 
     /* -------EXPERIENCE-EXPERIENCE------WORK-WORK -------------WORK------------- WORK-------------*/
