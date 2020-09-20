@@ -830,6 +830,7 @@
     .technologies div{
       width: fit-content;
       padding-right: 2%;
+      white-space: nowrap;
       padding-left: 2%;
     }
 
