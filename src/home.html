@@ -45,6 +45,7 @@
                 $('#sec1').addClass('current');
                 $('.hide').removeClass();
                 $('#green').addClass('hide');
+
             }
             else{
               $('.sidenav-fixed').removeClass().addClass('sidenav');
@@ -52,6 +53,9 @@
               $('#arrow').addClass('current');
               $('.hide').removeClass();
               $('#grey').addClass('hide');
+              $('#line-right').addClass('hide');
+              $('#in').addClass('hide');
+
             }
         });
     });
@@ -97,7 +101,7 @@ $(document).ready(function () {
           $('.current').removeClass();
           $('#sec3').addClass("current")
       }
-      else if(($window.scrollTop() >= about) && ($window.scrollTop() < contact)) {
+      else if(($window.scrollTop() >= about) && ($window.scrollTop() < contact-15)) {
           $('.current').removeClass();
           $('#sec4').addClass("current")
       }
@@ -117,17 +121,18 @@ $(document).ready(function () {
 
     <div class="hero">
       <a href="resume.pdf"><div class="resume"> Resum&eacute;  </div></a>
-      <div class="line-right"> <a href="https://www.linkedin.com/in/matthewpozsgai/" ><img src="in.png" ></img> </a> </div>
+      <div id="line-right"> <a href="https://www.linkedin.com/in/matthewpozsgai/" ><img id="in" class="hide" src="in.png" ></img> </a> </div>
       <a href="mailto:mjpozsgai@gmail.com"><div class="contact-link"> Contact Me</div></a>
 
       <div class="hero-container">
-        <span class="hello">Hey!  <span class="my"> My name is</span></span>
+        <span class="hello">Hey, my name is</span>
         <strong>Matthew Pozsgai.</strong>
+        <div class="sub-title">I'm a software engineer and grad student based in Chicago, IL.</div>
       </div>
     </div>
   <div class="sidenav">
     <ul class="nav-menu">
-       <a href="#overview"><li id="sec1" > Overview</li> </a>
+       <a href="#overview"><li id="sec1" > Summary</li> </a>
        <a href="#experience"><li id="sec2"> Experience</li> </a>
        <a href="#projects"><li id="sec3"> Projects</li> </a>
        <a href="#about"><li  id="sec4"> About Me</li> </a>
@@ -145,7 +150,7 @@ $(document).ready(function () {
     <div class="overview" id="overview">
 
       <div class="header">
-          <div class="underline"></div><h1>OVERVIEW</h1><div class="underline"></div>
+          <div class="underline"></div><h1>SUMMARY</h1><div class="underline"></div>
       </div>
 
       <div class="content-overview">
@@ -153,8 +158,14 @@ $(document).ready(function () {
 
         <div class="wrapper">
         <div class="content-text">
-
-
+          I'm currently a graduate student at The University of Chicago, where I'm getting a
+          Master's in Computer Science with a specialization in software engineering. I love solving hard problems.
+          I spent 5+ years working in research labs, where I developed the critical thinking skills and attention to detail
+          required to succeed in software development. Acting as the lab manager, I learned the importance of communication and
+          organization when working as a team.
+          <br><br>
+          After graduation in December 2020 I hope to obtain a full-stack software engineering position. If you have a role you think I
+          might be a good fit for, or if you have any questions, please feel free to <a href="#contact">contact me</a>.
         </div>
         <div class="content-image">
           <img src="me_final.jpg"></img>
@@ -219,6 +230,15 @@ $(document).ready(function () {
                   <div class="details">
                    </div>
                 </div>
+                <div class="job-2">
+                  <div class="row">
+                  <div class="job-name">Indiana University</div>
+                  <div class="dates">September 2014 - December 2017</div>
+                  </div>
+                  <div class="role">Research Associate</div>
+                  <div class="details">
+                   </div>
+                </div>
               </div>
           </div>
 
@@ -253,7 +273,7 @@ $(document).ready(function () {
       <div class="projects" id="projects">
         <div class="header">
           <div class="underline"></div>
-            <h1>Projects</h1>
+            <h1>PROJECTS</h1>
             <div class="underline"></div>
         </div>
         <div class="content-projects">
@@ -358,18 +378,30 @@ $(document).ready(function () {
       <div class="about" id="about">
         <div class="header">
           <div class="underline-about"></div>
-            <h1>About Me</h1>
+            <h1>ABOUT ME</h1>
             <div class="underline-about"></div>
         </div>
         <div class="content-about">
-          I'm a graduate student in the Masters Program in Computer Science at The University of Chicago.
+          I was born and raised in South Bend, IN. I stayed in Indiana for college, and moved to Chicago shortly after graduation,
+          where I've been for a little over 2 years.
           <br><br>
-          I graduated from Indiana University Bloomington with a BS in neuroscience. Shortly after graduation, I began working
-          full time in Dr. Lucy Godley's lab at The University of Chicago where I divided my time between managerial responsibilities and
-          bionformatic research. Around the same time I began evening classes for my Masters program.
+          I graduated from <a href="https://www.indiana.edu/"> Indiana University Bloomington</a> with a BS in neuroscience. Shortly after graduation, I began working
+          full time with <a href="https://biologicalsciences.uchicago.edu/faculty/lucy-godley-md-phd">Dr. Lucy Godley</a> at The University of Chicago, where I divided my time between managerial responsibilities and
+          bioinformatic research.  My research utilized Whole Exome Sequencing to characterize molecular progression towards leukemia, and
+          identify novel risk alleles that predispose to hematopoietic disorders.
+          Around the same time I began evening classes for my <a href="https://masters.cs.uchicago.edu/">Masters program</a>. I've enjoyed all of my classes throughout my program,
+          but my favorites have been Web Development, Cloud Computing, and Distributed Systems.
           <br><br>
-          After graduation I hope to obtain a full-stack software engineering position. If you have any questions or just want to say hi,
-          my inbox is always open!
+          To apply my skills outside of the classroom, I worked as a software development engineer intern at Amazon, where I worked on a customer-facing
+          feature for Amazon Fashion. As a side project, I designed and developed the website for <a href="https://runners4readers.org/">Runners-4-Readers</a>,
+          an awesome organization whose goal is to fight illiteracy.
+          <br><br>
+          In my free time I love getting outside and being active. Ideally this would mean hiking, but since this is hard to come by in Chicago, it usually means walking around and exploring all of Chicago's awesome neighborhoods.
+          I'm an avid runner and biker - nothing beats a morning run or a ride along the lakefront trail!
+          I also enjoy playing piano, guitar, and making pottery.
+          <br><br>
+          In addition to seeking a full-time software engineering position, I'm also open to free-lance work. If you have a project you think I can help with,
+          feel free to <a href="#contact">reach out</a>!
         </div>
 
       </div>
@@ -377,11 +409,20 @@ $(document).ready(function () {
       <div class="contact" id="contact">
         <div class="header">
           <div class="underline"></div>
-            <h1>Contact</h1>
+            <h1>CONTACT</h1>
             <div class="underline"></div>
         </div>
         <div class="content-contact">
-
+          Whether you have a job opportunity, an inquiry about a free-lance project, questions about me, or just want to say hello, my inbox is always open!
+          <br><br>
+          <a href="mailto:mjpozsgai@gmail.com">
+            <div class="mail">
+              <div class="icon"></div>
+          </div></a>
+          <a href="https://www.linkedin.com/in/matthewpozsgai/">
+            <div class="mail">
+              <div class="icon-2"></div>
+          </div></a>
         </div>
 
       </div>
