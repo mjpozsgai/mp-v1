@@ -136,24 +136,28 @@
     font-size: 0;
   }
 
-  #line-right img{
+  #line-right div{
     margin-top: auto;
     margin-bottom: auto;
     height: 24px;
     width: 24px;
+    background-image: url("in.png");
     position: absolute;
     top: 45%;
     right: -12px;
     animation-iteration-count: 1;
     animation-name: appear;
     animation-duration: 2s;
+    background-size: contain;
     animation-fill-mode: forwards;
     opacity: 0;
   }
 
-  #line-right img:hover{
+  #line-right div:hover{
     top: 44%;
     right: -12px;
+    background-image: url("in_green.png")
+
   }
 
 
@@ -682,9 +686,36 @@
     text-align: center;
     }
 
-    .project-square img{
+    .project-square .icon-git{
       width: 25px;
+      height: 25px;
       float: right;
+      background-image: url("github.png");
+      background-size: contain;
+    }
+
+    .project-square .icon-git:hover{
+      background-image: url("github_green.png")
+    }
+
+    .project-title{
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    .project-square .icon-link{
+      width: 25px;
+      height: 25px;
+      margin-left: 2%;
+      background-image: url("link_grey.png");
+      background-size: contain;
+      transform: translateY(-3px);
+    margin-left: 10px;
+    }
+
+    .project-square .icon-link:hover{
+      background-image: url("link_green.png")
     }
 
     .projects{

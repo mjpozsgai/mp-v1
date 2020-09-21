@@ -192,7 +192,7 @@ $(document).ready(function () {
     </div>
   <div class="sidenav" id="sidenav-closed">
     <a href="resume.pdf"><div class="resume"> Resum&eacute;  </div></a>
-    <div id="line-right"> <a href="https://www.linkedin.com/in/matthewpozsgai/" ><img id="in" class="hide" src="in.png" ></img> </a> </div>
+    <div id="line-right"> <a href="https://www.linkedin.com/in/matthewpozsgai/" ><div id="in" class="hide"></div> </a> </div>
     <a href="mailto:mjpozsgai@gmail.com"><div class="contact-link"> Contact Me</div></a>
     <div class="menu-button"  id="menu-collapse" >
       <div onclick="collapse()" class="arrow-menu" id="down-arrow">
@@ -385,9 +385,12 @@ $(document).ready(function () {
             <div class="projects-row">
 
               <div class="project-square">
-                <div class="project-title">Runners-4-Readers
-                <a href="https://github.com/mjpozsgai/runners4readers" ><img src="github.png"></img></a>
-</div>
+                <div class="project-title"><span>Runners-4-Readers</span>
+                <a href="https://runners4readers.org" ><div class="icon-link"></div></a>
+
+                <a style="margin-left:auto" href="https://github.com/mjpozsgai/runners4readers" ><div style="margin-left:auto" class="icon-git"></div></a>
+
+              </div>
                 <div class="project-description">
                     A responsive website for the non-profit Runners-4-Readers that allows users to learn
                     about the organization, make donations, and volunteer.
@@ -401,10 +404,9 @@ $(document).ready(function () {
               </div>
 
               <div class="project-square">
-
                 <div class="project-title">Personal Website
-                <a href="https://github.com/mjpozsgai/mp-v1" ><img src="github.png"></img></a>
-</div>
+                <a style="margin-left:auto" href="https://github.com/mjpozsgai/mp-v1" ><div  class="icon-git"></div></a>
+              </div>
                 <div class="project-description">
                     First iteration of my personal website.
                  </div>
@@ -453,8 +455,8 @@ $(document).ready(function () {
             <div class="projects-row">
               <div class="project-square">
                 <div class="project-title">A+Ocean
-                <a href="https://github.com/mjpozsgai/a-plus-ocean" ><img src="github.png"></img></a>
-</div>
+                <a style="margin-left:auto" href="https://github.com/mjpozsgai/a-plus-ocean" ><div style="margin-left:auto" class="icon-git"></div></a>
+              </div>
                 <div class="project-description">
                     An auction site modeled on eBay, designed with a microservice architecture.
 
