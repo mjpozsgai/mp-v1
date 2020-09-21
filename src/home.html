@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
     <script>
     $(document).ready(function(){
+      MyProject.contact = $('.contact').offset().top;
+      MyProject.about = $('.about').offset().top;
+      MyProject.projects = $('.projects').offset().top;
       // Add smooth scrolling to all links
       $("a").on('click', function(event) {
 
@@ -80,6 +83,8 @@
 //
 // });
 //
+var MyProject = {}
+
 function collapse() {
     var menu = document.getElementsByClassName('nav-menu')[0];
     var nav = document.getElementsByClassName('sidenav')[0];
@@ -109,6 +114,10 @@ function wait(){
 }
 
 function show_content(ele){
+  MyProject.contact = $('.contact').offset().top;
+  MyProject.about = $('.about').offset().top;
+  MyProject.projects = $('.projects').offset().top;
+
   var curr = ele.id;
   var show = document.getElementsByClassName(curr)[0];
 
@@ -124,14 +133,17 @@ function show_content(ele){
 }
 
 function hide_content(ele){
+  MyProject.contact = $('.contact').offset().top;
+  MyProject.about = $('.about').offset().top;
+  MyProject.projects = $('.projects').offset().top;
   var curr = ele.id;
   var number = curr.split("-")[1]
   var see_more = "see-more-".concat(number);
 
   var div = document.getElementsByClassName(see_more)[0];
-  console.log(div)
   var show = document.getElementsByClassName(curr)[0];
   if (show.id == "details-hide"){
+
     show.id = "details-show";
   }
   else{
@@ -141,16 +153,11 @@ function hide_content(ele){
   }
 }
 
-
 $(document).ready(function () {
 
     var $window = $(window);
-
-    var overview = $('.overview').offset().top-20;
-    var experience = $('.experience').offset().top-20;
-    var projects = $('.projects').offset().top-20;
-    var about = $('.about').offset().top-20;
-    var contact = $('.contact').offset().top-20;
+    var overview = $('.overview').offset().top;
+    var experience = $('.experience').offset().top;
 
 
     $window.scroll(function () {
@@ -160,47 +167,45 @@ $(document).ready(function () {
                $('.current').removeClass();
                 $('#sec1').addClass("current");
         }
-        else if(($window.scrollTop() >= experience) && ($window.scrollTop() < projects)) {
+        else if(($window.scrollTop() >= experience) && ($window.scrollTop() < MyProject.projects-10)) {
             $('.current').removeClass();
             $('#sec2').addClass("current");
 
         }
-        else if(($window.scrollTop() >= projects) && ($window.scrollTop() < about)) {
+        else if(($window.scrollTop() >= MyProject.projects) && ($window.scrollTop() < MyProject.about-10)) {
             $('.current').removeClass();
-            $('#sec3').addClass("current")
+            $('#sec3').addClass("current");
         }
-        else if(($window.scrollTop() >= about) && ($window.scrollTop() < contact-225)) {
+        else if(($window.scrollTop() >= MyProject.about) && ($window.scrollTop() < MyProject.contact-45)) {
 
             $('.current').removeClass();
-            $('#sec4').addClass("current")
+            $('#sec4').addClass("current");
         }
         else {
             $('.current').removeClass();
-            $('#sec5').addClass("current")
+            $('#sec5').addClass("current");
         }
-
-
       }
 
       else{
         if ($window.scrollTop() < experience){
           ;
         }
-        else if(($window.scrollTop() >= experience) && ($window.scrollTop() < projects)) {
+        else if(($window.scrollTop() >= experience) && ($window.scrollTop() < MyProject.projects)) {
             $('.current').removeClass();
-            $('#sec2').addClass("current")
+            $('#sec2').addClass("current");
         }
-        else if(($window.scrollTop() >= projects) && ($window.scrollTop() < about)) {
+        else if(($window.scrollTop() >= MyProject.projects) && ($window.scrollTop() < MyProject.about)) {
             $('.current').removeClass();
-            $('#sec3').addClass("current")
+            $('#sec3').addClass("current");
         }
-        else if(($window.scrollTop() >= about) && ($window.scrollTop() < contact-15)) {
+        else if(($window.scrollTop() >= MyProject.about) && ($window.scrollTop() < MyProject.contact-15)) {
             $('.current').removeClass();
-            $('#sec4').addClass("current")
+            $('#sec4').addClass("current");
         }
         else {
             $('.current').removeClass();
-            $('#sec5').addClass("current")
+            $('#sec5').addClass("current");
         }
 
       }

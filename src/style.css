@@ -760,6 +760,10 @@
       float: right;
       background-image: url("github.png");
       background-size: contain;
+      transform: translateY(-3px);
+
+      background-repeat: no-repeat;
+
     }
 
     .project-square .icon-git:hover{
@@ -779,7 +783,9 @@
       background-image: url("link_grey.png");
       background-size: contain;
       transform: translateY(-3px);
-    margin-left: 10px;
+      background-repeat: no-repeat;
+
+      margin-left: 10px;
     }
 
     .project-square .icon-link:hover{

@@ -455,6 +455,7 @@
     padding: 1%;
     width: 50%;
     margin: 0;
+    white-space: nowrap;
     font-size: 22px;
     font-weight: 500;
     /*border-bottom: 3px solid var(--navy);*/
@@ -769,7 +770,6 @@
       margin-left: auto;
       margin-right: auto;
       font-weight: 400;
-      z-index: 50;
       color: var(--accent-green);
       border: 1px solid var(--accent-green);
       border-radius: 6px;
@@ -789,7 +789,6 @@
       margin-left: auto;
       margin-right: auto;
       font-weight: 400;
-      z-index: 50;
       color: var(--accent-green);
       border: 1px solid var(--accent-green);
       border-radius: 6px;
@@ -809,7 +808,6 @@
       margin-left: auto;
       margin-right: auto;
       font-weight: 400;
-      z-index: 50;
       color: var(--accent-green);
       border: 1px solid var(--accent-green);
       border-radius: 6px;
@@ -828,7 +826,6 @@
       margin-left: auto;
       margin-right: auto;
       font-weight: 400;
-      z-index: 50;
       color: var(--accent-green);
       border: 1px solid var(--accent-green);
       border-radius: 6px;
@@ -847,7 +844,6 @@
       margin-left: auto;
       margin-right: auto;
       font-weight: 400;
-      z-index: 50;
       color: var(--accent-green);
       border: 1px solid var(--accent-green);
       border-radius: 6px;
@@ -866,7 +862,6 @@
       margin-left: auto;
       margin-right: auto;
       font-weight: 400;
-      z-index: 50;
       color: var(--accent-green);
       border: 1px solid var(--accent-green);
       border-radius: 6px;
@@ -962,12 +957,12 @@
       transform: translateY(-3px);
     margin-left: 10px;
       float: left;
-      background-image: url("icon_grey.png");
+      background-image: url("link_grey.png");
       background-size: contain;
     }
 
     .project-square .icon-link:hover{
-      background-image: url("icon_green.png")
+      background-image: url("link_green.png")
     }
 
 
