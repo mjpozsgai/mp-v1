@@ -761,6 +761,12 @@
     text-align: center;
     }
 
+    .project-square img{
+      width: 20px;
+      float: right;
+    }
+
+
     .projects{
       display: flex;
       padding-top: 50px;

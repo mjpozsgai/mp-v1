@@ -682,6 +682,11 @@
     text-align: center;
     }
 
+    .project-square img{
+      width: 25px;
+      float: right;
+    }
+
     .projects{
       display: flex;
       flex-direction: column;
