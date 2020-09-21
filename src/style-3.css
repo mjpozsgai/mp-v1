@@ -10,7 +10,7 @@
     --dark-grey: #0e0d0d;
     --accent-green: #8ee4af;
     --accent-blue: #2654fa;
-    --grey: #a2b6ca;
+    --grey: #8892b0;
     --light-grey: #cfd5dc;
     --dim-grey:#cfd5dc73;
   }
@@ -652,6 +652,45 @@
     flex-direction: column;
   }
 
+  .job-details{
+    font-family: sans-serif;
+    font-weight: 200;
+    color: var(--grey);
+    font-size: 14px;
+    font-weight: 400;
+    list-style-position: outside;
+    padding: 0;
+    margin: 0px;
+    list-style: none;
+
+  }
+
+  .job-details > li{
+    /*padding: 1% 0 0% 0;
+    text-align: left;*/
+    line-height: 1.6;
+        position: relative;
+        /* padding-right: 35px; */
+        padding-left: 15px;
+        margin-top: 2%;
+  }
+
+  .job-details li:before{
+    margin-bottom: auto;
+    content: '';
+    margin-top: auto;
+    margin-right: .5em;
+    position: absolute;
+    left: 0px;
+    height: 8px;
+    width: 8px;
+    transform: translateY(95%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(square.png);
+  }
+
+
 
     .job{
       position: relative;
@@ -692,13 +731,145 @@
       font-size: 16px;
       font-weight: 400;
     }
-    .details{
+    #details-show{
       display: flex;
+      flex-direction: column;
+      font-family: sans-serif;
+      font-weight: 400;
+      visibility: visible;
+      color: var(--light-grey);
+      font-size: 18px;
+      font-weight: 500;
+
+    }
+
+    #details-hide{
+      display: flex;
+      flex-direction: column;
+      height: 0;
+      visibility: hidden;
       font-family: sans-serif;
       font-weight: 400;
       color: var(--light-grey);
       font-size: 18px;
       font-weight: 500;
+    }
+
+    .see-more{
+      height: 30px;
+      width: 80px;
+      margin-top: 3%;
+      margin-bottom: 2%;
+      display: flex;
+      background-color: var(--dark-navy);
+      justify-content: center;
+      font-family: sans-serif;
+      align-items: center;
+      font-size: 14px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+      z-index: 50;
+      color: var(--accent-green);
+      border: 1px solid var(--accent-green);
+      border-radius: 6px;
+    }
+
+    .see-more-1{
+      height: 30px;
+      width: 80px;
+      display: flex;
+      margin-top: 3%;
+
+      background-color: var(--dark-navy);
+      justify-content: center;
+      font-family: sans-serif;
+      align-items: center;
+      font-size: 14px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+      z-index: 50;
+      color: var(--accent-green);
+      border: 1px solid var(--accent-green);
+      border-radius: 6px;
+    }
+
+    .see-more-2{
+      height: 30px;
+      width: 80px;
+      display: flex;
+      margin-top: 3%;
+
+      background-color: var(--dark-navy);
+      justify-content: center;
+      font-family: sans-serif;
+      align-items: center;
+      font-size: 14px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+      z-index: 50;
+      color: var(--accent-green);
+      border: 1px solid var(--accent-green);
+      border-radius: 6px;
+    }
+    .see-more-3{
+      height: 30px;
+      width: 80px;
+      margin-top: 3%;
+
+      display: flex;
+      background-color: var(--dark-navy);
+      justify-content: center;
+      font-family: sans-serif;
+      align-items: center;
+      font-size: 14px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+      z-index: 50;
+      color: var(--accent-green);
+      border: 1px solid var(--accent-green);
+      border-radius: 6px;
+    }
+    .see-more-4{
+      height: 30px;
+      width: 80px;
+      display: flex;
+      margin-top: 3%;
+
+      background-color: var(--dark-navy);
+      justify-content: center;
+      font-family: sans-serif;
+      align-items: center;
+      font-size: 14px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+      z-index: 50;
+      color: var(--accent-green);
+      border: 1px solid var(--accent-green);
+      border-radius: 6px;
+    }
+    .see-more-5{
+      height: 30px;
+      width: 80px;
+      display: flex;
+      margin-top:3%;
+
+      background-color: var(--dark-navy);
+      justify-content: center;
+      font-family: sans-serif;
+      align-items: center;
+      font-size: 14px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+      z-index: 50;
+      color: var(--accent-green);
+      border: 1px solid var(--accent-green);
+      border-radius: 6px;
     }
 
     /* -------EXPERIENCE-EXPERIENCE------SKILLS-SKILLS -------------SKILLS------------- SKILLS-------------*/

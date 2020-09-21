@@ -10,7 +10,7 @@
     --dark-grey: #0e0d0d;
     --accent-green: #8ee4af;
     --accent-blue: #2654fa;
-    --grey: #a2b6ca;
+    --grey: #9da7c6;
     --light-grey: #cfd5dc;
     --dim-grey:#cfd5dc73;
   }
@@ -542,6 +542,8 @@
     font-size: 16px;
     font-weight: 200;
     width: fit-content;
+    padding-top: 5px;
+
     float: right;
   }
 
@@ -603,13 +605,79 @@
       font-size: 20px;
       font-weight: 200;
     }
-    .details{
+    #details-show{
       display: flex;
       font-family: sans-serif;
       font-weight: 400;
       color: var(--light-grey);
       font-size: 18px;
       font-weight: 500;
+    }
+    #details-hide{
+      display: flex;
+      font-family: sans-serif;
+      font-weight: 400;
+      color: var(--light-grey);
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .see-more{
+      display: none;
+    }
+    .see-more-1{
+      display: none;
+    }
+    .see-more-2{
+      display: none;
+    }
+    .see-more-3{
+      display: none;
+    }
+    .see-more-4{
+      display: none;
+    }
+    .see-more-5{
+      display: none;
+    }
+
+    .job-details{
+      font-family: sans-serif;
+      font-weight: 200;
+      color: var(--grey);
+      font-size: 16px;
+      font-weight: 200;
+      list-style-position: outside;
+      padding: 0% 5% 0% 5%;
+
+      margin: 0px;
+      list-style: none;
+
+    }
+
+    .job-details > li{
+      /*padding: 1% 0 0% 0;
+      text-align: left;*/
+      line-height: 1.6;
+      position: relative;
+      padding-right: 35px;
+
+        padding-left: 35px;
+        margin-top: 2%;
+    }
+
+    .job-details li:before{
+      margin-bottom: auto;
+      content: '';
+      margin-top: auto;
+      margin-right: .5em;
+      position: absolute;
+      left: 0px;
+      height: 8px;
+      width: 8px;
+      transform: translateY(95%);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(square.png);
     }
 
 

@@ -108,6 +108,39 @@ function wait(){
 
 }
 
+function show_content(ele){
+  var curr = ele.id;
+  var show = document.getElementsByClassName(curr)[0];
+
+  if (show.id == "details-hide"){
+    show.id = "details-show";
+    ele.style.display = "none";
+  }
+  else{
+    show.id = "details-hide";
+    ele.style.display = "flex;"
+
+  }
+}
+
+function hide_content(ele){
+  var curr = ele.id;
+  var number = curr.split("-")[1]
+  var see_more = "see-more-".concat(number);
+
+  var div = document.getElementsByClassName(see_more)[0];
+  console.log(div)
+  var show = document.getElementsByClassName(curr)[0];
+  if (show.id == "details-hide"){
+    show.id = "details-show";
+  }
+  else{
+    show.id = "details-hide";
+    div.style.display = "flex";
+
+  }
+}
+
 
 $(document).ready(function () {
 
@@ -130,8 +163,7 @@ $(document).ready(function () {
         else if(($window.scrollTop() >= experience) && ($window.scrollTop() < projects)) {
             $('.current').removeClass();
             $('#sec2').addClass("current");
-            console.log($window.scrollTop() );
-            console.log(projects);
+
         }
         else if(($window.scrollTop() >= projects) && ($window.scrollTop() < about)) {
             $('.current').removeClass();
@@ -284,7 +316,19 @@ $(document).ready(function () {
                   <div class="dates">June 2020 - September 2020</div>
                   </div>
                   <div class="role">Software Development Engineer Intern</div>
-                  <div class="details">
+                  <div onclick = "show_content(this);" class="see-more-1" id= "detail-1"> See More</div>
+
+                  <div class= "detail-1" id="details-hide">
+                    <ul  class="job-details">
+                      <li><span>Developed customer-facing features for Amazon Fashion using Java and HTML/CSS</span>
+                      </li>
+                      <li>Investigated technical design, created project design documentation, and presented design to senior engineers and project
+leadership
+                      </li>
+                      <li>Utilized agile development techniques by participating in sprint planning and communicating issues and progress in daily standups
+                      </li>
+                    </ul>
+                    <div onclick = "hide_content(this);" class="see-more" id= "detail-1"> See Less</div>
 
                    </div>
                 </div>
@@ -294,7 +338,28 @@ $(document).ready(function () {
                   <div class="dates">April 2018 - December 2019</div>
                   </div>
                   <div class="role">Research Technologist</div>
-                  <div class="details">
+                  <div onclick = "show_content(this);" class="see-more-2" id= "detail-2"> See More</div>
+
+                  <div class= "detail-2" id="details-hide">
+
+                      <ul  class="job-details">
+                        <li>Utilized the Genome Analysis Toolkit (GATK) command-line tools to process Whole Exome Sequencing (WES) data on a High-
+Performance Computing Cluster</li>
+                        <li>Filtered WES data using Python scripts; analyzed WES variant data to characterize molecular progression towards leukemia and
+identify novel alleles that predispose to hematopoietic disorders</li>
+
+                        <li>Handled lab management responsibilities: ordered supplies and equipment, processed and stored patient research samples,
+curated samples for internal projects/external collaborations</li>
+
+                        <li>Improved logistics of patient sample withdrawal by implementing a new organizational system for storing, cataloguing, and
+retrieving patient research samples</li>
+
+                        <li>Trained 10+ undergraduates, technicians, and post-doctoral fellows on various lab techniques, including WES pipeline and analysis,
+DNA extraction, PCR, and mammalian tissue culture</li>
+
+                      </ul>
+                      <div onclick = "hide_content(this);" class="see-more" id= "detail-2"> See Less</div>
+
                    </div>
                 </div>
                 <div class="job-2">
@@ -303,7 +368,17 @@ $(document).ready(function () {
                   <div class="dates">September 2014 - December 2017</div>
                   </div>
                   <div class="role">Research Associate</div>
-                  <div class="details">
+                  <div onclick = "show_content(this);" class="see-more-3" id= "detail-3"> See More</div>
+
+                  <div class= "detail-3" id="details-hide">
+
+                    <ul  class="job-details">
+                      <li>Ordered supplies and equipment, managed vivarium, and trained new undergraduate students</li>
+                      <li>Worked on project cloning RTN4 gene to examine interactions with receptor tyrosine kinase ErbB4 due to a possible connection with
+schizophrenia</li>
+                    </ul>
+                    <div onclick = "hide_content(this);" class="see-more" id= "detail-3"> See Less</div>
+
                    </div>
                 </div>
               </div>
@@ -320,27 +395,41 @@ $(document).ready(function () {
                   <div class="job-name">Cold Spring Harbor Laboratory</div>
                   <div class="dates">July 2016, July 2017</div>
                   </div>
-                  <div class="role">Teaching Assistant</div>
-                  <div class="details">
+                  <div class="role">Teaching Assistant - Advanced Techniques in Molecular Neuroscience</div>
+                  <div onclick = "show_content(this);" class="see-more-4" id= "detail-4"> See More</div>
+
+                  <div class= "detail-4" id="details-hide">
+
+                    <ul  class="job-details">
+                      <li>Prepared lab space, prepared relevant course materials, and assisted with lab instruction for 16 students (Ph.D. and M.D. Graduates,
+    and Ph.D. candidates) on techniques to be applied to their research</li>
+                      <li> Led lab instruction for the BAC module - detailing assembly and use of Bacterial Artificial Chromosomes - by demonstrating
+techniques, providing reagents, and answering protocol-related questions
+ </li>
+
+                    </ul>
+                    <div onclick = "hide_content(this);" class="see-more" id= "detail-4"> See Less</div>
+
 
                    </div>
                 </div>
                 <div class="job-2">
                   <div class="row">
                   <div class="job-name">Indiana University </div>
-                  <div class="dates">April 2018 - December 2019</div>
-                  </div>
-                  <div class="role">Research Technologist</div>
-                  <div class="details">
-                   </div>
-                </div>
-                <div class="job-2">
-                  <div class="row">
-                  <div class="job-name">Indiana University - Bloomington</div>
                   <div class="dates">Spring &amp Fall 2016, 2017</div>
                   </div>
-                  <div class="role">Teaching Assistant</div>
-                  <div class="details">
+                  <div class="role">Teaching Assistant - Lab in Molecular Neuroscience</div>
+                  <div onclick = "show_content(this);" class="see-more-5" id= "detail-5"> See More</div>
+
+                  <div class= "detail-5" id="details-hide">
+                    <ul  class="job-details">
+                      <li>Prepared lab space, aliquoted reagents for each group, and led lab instruction for 12 undergraduate and graduate students on various molecular neuroscience techniques</li>
+                      <li>
+                        Ensured absorption of curriculum by holding office hours, exam reviews, and tutoring sessions
+                      </li>
+                    </ul>
+                    <div onclick = "hide_content(this);" class="see-more" id= "detail-5">See Less</div>
+
                    </div>
                 </div>
               </div>
@@ -361,7 +450,6 @@ $(document).ready(function () {
                     <li>React</li>
                     <li>AWS</li>
                     <li>SQL</li>
-                    <li>C++</li>
                     <li>Docker</li>
                     <li>Django</li>
                     <li>Object-Oriented Programming</li>
@@ -424,7 +512,42 @@ $(document).ready(function () {
 
 
             <div class="projects-row">
+              <div class="project-square">
+                <div class="project-title">A+Ocean
+                <a style="margin-left:auto" href="https://github.com/mjpozsgai/a-plus-ocean" ><div style="margin-left:auto" class="icon-git"></div></a>
+              </div>
+                <div class="project-description">
+                    An auction site modeled on eBay, designed with a microservice architecture.
 
+                 </div>
+                <div class="technologies">
+                  <div>Python</div>|
+                  <div>Django</div>|
+                  <div>Docker</div>|
+                  <div>RabbitMQ</div>
+                </div>
+              </div>
+
+              <div class="project-square">
+                <div class="project-title">Belay
+                <a style="margin-left:auto" href="https://github.com/mjpozsgai/belay" ><div style="margin-left:auto" class="icon-git"></div></a>
+              </div>
+                <div class="project-description">
+                    An asynchronous chatroom web-app modeled on Slack
+                 </div>
+                <div class="technologies">
+                  <div>Python</div>|
+                  <div>React</div>|
+                  <div>JS</div>|
+                  <div>HTML</div>|
+                  <div>CSS</div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="projects-row">
               <div class="project-square">
                 <div class="project-title">Distributed Message Queue</div>
                 <div class="project-description">
@@ -450,34 +573,6 @@ $(document).ready(function () {
                 </div>
               </div>
 
-            </div>
-
-            <div class="projects-row">
-              <div class="project-square">
-                <div class="project-title">A+Ocean
-                <a style="margin-left:auto" href="https://github.com/mjpozsgai/a-plus-ocean" ><div style="margin-left:auto" class="icon-git"></div></a>
-              </div>
-                <div class="project-description">
-                    An auction site modeled on eBay, designed with a microservice architecture.
-
-                 </div>
-                <div class="technologies">
-                  <div>Python</div>|
-                  <div>Django</div>|
-                  <div>Docker</div>|
-                  <div>RabbitMQ</div>
-                </div>
-              </div>
-              <div class="project-square">
-                <div class="project-title">Research Study Database</div>
-                <div class="project-description">
-                  Modeled and implemented a simple database to track research studies and patient enrollment.
-                 </div>
-                <div class="technologies">
-                  <div>MySQL</div>|
-                  <div>PHP</div>
-                </div>
-              </div>
 
             </div>
 
